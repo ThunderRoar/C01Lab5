@@ -215,6 +215,7 @@ test("/patchNote - Patch with just content", async () => {
 
 // Added Test Case
 test("/deleteAllNotes - Delete one note", async () => {
+  // Clearing DB before running intended test
   delAll();
 
   const res = await fetch(`${SERVER_URL}/postNote`, {
@@ -293,7 +294,8 @@ test("/updateNoteColor - Update color of a note to red (#FF0000)", async () => {
   const colourChangeNoteID = resBody.insertedId;
   expect(resBody.response).toBe("Note added successfully.");
 
-  let color = "#afd332";
+  // Test colour
+  let colour = "#afd332";
 
   const patchColourRes = await fetch(
     `${SERVER_URL}/updateNoteColor/${colourChangeNoteID}`,
@@ -302,7 +304,7 @@ test("/updateNoteColor - Update color of a note to red (#FF0000)", async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ color }),
+      body: JSON.stringify({ colour }),
     }
   );
 
