@@ -52,8 +52,8 @@ test("/getAllNotes - Return list of two notes for getAllNotes", async () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: `test${i+1}`,
-        content: `test${i+1}`,
+        title: `test${i + 1}`,
+        content: `test${i + 1}`,
       }),
     });
 
@@ -254,8 +254,8 @@ test("/deleteAllNotes - Delete three notes", async () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: `test${i+1}`,
-        content: `test${i+1}`,
+        title: `test${i + 1}`,
+        content: `test${i + 1}`,
       }),
     });
 
